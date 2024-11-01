@@ -1,0 +1,81 @@
+/* General body styling for dark mode */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    font-size: 3em;
+    color: var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color),
+                 0 0 1.5em var(--glow-spread-color),
+                 0 0 3em var(--glow-spread-color);
+    margin-bottom: 40px;
+}
+
+.links-section {
+    margin-bottom: 30px;
+}
+
+/* Neon link styling */
+.neon-link {
+    display: block;
+    font-size: 1.5em;
+    color: rgb(217, 176, 255);
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid rgb(100, 61, 136);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.neon-link:hover {
+    color: rgb(100, 61, 136);
+    background-color: rgb(217, 176, 255);
+    box-shadow: 0 0 10px rgb(217, 176, 255), 0 0 20px rgb(191, 123, 255);
+}
+
+/* Back button styling */
+.back-button {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --btn-color: rgb(100, 61, 136);
+    border: 0.25em solid var(--btn-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.back-button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 2em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
+    transform: scale(1.1); /* Increases button size on hover */
+}

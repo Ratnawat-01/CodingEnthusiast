@@ -1,0 +1,67 @@
+/* General body styling for dark mode */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Container for the content */
+.container {
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Neon glowing heading for "About Coding Enthusiast" */
+h1, h2 {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --text-color: rgb(100, 61, 136);
+
+    color: var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color),
+                 0 0 1.5em var(--glow-spread-color),
+                 0 0 3em var(--glow-spread-color);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 40px;
+}
+
+/* Text for the intro paragraph */
+.intro-text {
+    font-size: 1.2em;
+    color: #e0e0e0;
+    line-height: 1.8;
+    text-shadow: 0 0 0.5em rgba(217, 176, 255, 0.5);
+}
+
+/* Contact info styling */
+.contact-info {
+    font-size: 1.2em;
+    color: rgb(217, 176, 255);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    margin-top: 10px;
+}
+
+.contact-info a {
+    color: rgb(217, 176, 255);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: rgb(100, 61, 136);
+    text-shadow: 0 0 1em rgb(231, 206, 255);
+}

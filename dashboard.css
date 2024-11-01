@@ -1,0 +1,127 @@
+/* General body styling for dark mode */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    position: relative;
+    top: -30px; /* Moves the heading up without affecting the button */
+}
+
+/* Neon glowing heading */
+h1 {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --text-color: rgb(100, 61, 136);
+    
+    font-size: 3em;
+    color: var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color),
+                 0 0 1.5em var(--glow-spread-color),
+                 0 0 3em var(--glow-spread-color);
+    padding-bottom: 20px;
+    transition: text-shadow 0.3s ease;
+}
+
+h1:hover {
+    text-shadow: 0 0 1em var(--glow-color),
+                 0 0 3em var(--glow-spread-color),
+                 0 0 4em var(--enhanced-glow-color);
+}
+
+/* Button styling with neon/glow effect */
+button {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    border: 0.25em solid var(--btn-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 2em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
+    transform: scale(1.1); /* Increases button size on hover */
+}
+
+/* Menu icon styling for hamburger */
+.menu-icon {
+    font-size: 2em;
+    color: #e0e0e0;
+    position: absolute;
+    top: 0px; /* Moves the hamburger menu to the top */
+    right: 60px; /* Aligns it to the right corner */
+    cursor: pointer;
+}
+
+/* Sidebar menu (with neon effect to match the website color scheme) */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #2e2e2e; /* Dark background to match */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: rgb(217, 176, 255); /* Neon link color */
+    display: block;
+    text-shadow: 0 0 0.5em rgb(217, 176, 255),
+                 0 0 1em rgba(191, 123, 255, 0.781);
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: rgb(100, 61, 136); /* Inverse glow on hover */
+    text-shadow: 0 0 1em rgb(231, 206, 255),
+                 0 0 2em rgba(191, 123, 255, 0.781);
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 2em;
+    color: rgb(217, 176, 255); /* Matches neon theme */
+}
+
+/* Sidebar open/close button */
+.sidebar a:hover .closebtn {
+    color: #f1f1f1;
+}
