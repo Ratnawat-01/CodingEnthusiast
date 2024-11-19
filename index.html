@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Enthusiast - Dashboard</title>
+    <title>Welcome to Coding Enthusiast</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <div class="container">
         <h1>Welcome to Coding Enthusiast</h1>
-        <button onclick="window.location.href='links.html'">
-            VS Code / C++ Installation Links
-        </button>
+        <button onclick="window.location.href='links.html'">VS Code/C++ installation links</button>
+        <button onclick="window.location.href='dark_pdf.html'">View PDF in Dark Mode on Edge</button>
     </div>
 
-    <!-- Hidden sidebar menu -->
-    <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+    <!-- Menu Icon -->
+    <div class="menu-icon" onclick="openNav()">&#9776;</div>
+
+    <!-- Sidebar Menu -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="https://www.youtube.com/@Coding_Enhusiast" target="_blank">YouTube Channel</a>
         <a href="about.html">About</a>
     </div>
 
     <script>
-        function toggleMenu() {
-            var sidebar = document.getElementById("sidebar");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-            } else {
-                sidebar.style.width = "250px";
-            }
+        /* Open when someone clicks on the 3-line menu */
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        /* Close when someone clicks on the "x" */
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
         }
     </script>
 </body>

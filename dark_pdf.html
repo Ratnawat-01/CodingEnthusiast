@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode for PDFs on Edge</title>
+    <link rel="stylesheet" href="dark_pdf.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dark Mode for PDFs on Microsoft Edge</h1>
+        <div class="code-container">
+            <pre id="code">
+var cover = document.createElement("div"); 
+let css = ` 
+    position: fixed; 
+    pointer-events: none; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    background-color: white; 
+    mix-blend-mode: difference; 
+    z-index: 1; 
+` 
+cover.setAttribute("style", css); 
+document.body.appendChild(cover);
+
+// Set white background for the entire page
+document.body.style.backgroundColor = "white";
+document.documentElement.style.backgroundColor = "white";
+            </pre>
+            <button onclick="copyCode()" class="copy-btn">Copy Code</button>
+        </div>
+    </div>
+    <script>
+        function copyCode() {
+            const code = document.getElementById("code").innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert("Code copied to clipboard!");
+            }).catch(() => {
+                alert("Failed to copy code.");
+            });
+        }
+    </script>
+</body>
+</html>
