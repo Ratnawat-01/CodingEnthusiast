@@ -8,6 +8,8 @@
 </head>
 <body>
     <div class="container">
+        <!-- Logo Image -->
+        
         <h1>Welcome to Coding Enthusiast</h1>
         <button onclick="window.location.href='links.html'">VS Code/C++ installation links</button>
         <button onclick="window.location.href='dark_pdf.html'">View PDF in Dark Mode on Edge</button>
@@ -27,11 +29,26 @@
         /* Open when someone clicks on the 3-line menu */
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";
+            // Add event listener for clicks outside the sidebar
+            document.addEventListener('click', closeSidebarOnClickOutside);
         }
 
         /* Close when someone clicks on the "x" */
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
+            // Remove event listener when the sidebar is closed
+            document.removeEventListener('click', closeSidebarOnClickOutside);
+        }
+
+        /* Function to close sidebar when clicking outside */
+        function closeSidebarOnClickOutside(event) {
+            // If the click was outside the sidebar and menu icon
+            const sidebar = document.getElementById("mySidebar");
+            const menuIcon = document.querySelector(".menu-icon");
+
+            if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+                closeNav();
+            }
         }
     </script>
 </body>
