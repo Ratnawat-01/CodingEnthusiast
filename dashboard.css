@@ -50,3 +50,84 @@ button:hover {
                 0 0 4em 2em var(--glow-spread-color),
                 inset 0 0 0.75em 0.25em var(--glow-color);
 }
+
+/* Sidebar styling */
+.sidebar {
+    height: 100%; /* Full height */
+    width: 0; /* Start with a width of 0 */
+    position: fixed; /* Fix position to the top-right of the page */
+    z-index: 1; /* Sit on top */
+    top: 0;
+    right: 0; /* Position to the right */
+    background-color: #333; /* Sidebar background color */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* Smooth width transition */
+    padding-top: 60px; /* Padding from the top */
+}
+
+.sidebar a {
+    display: block;
+    text-align: center;
+    padding: 15px 20px;
+    margin: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #e0e0e0;
+    background-color: rgb(100, 61, 136);
+    border-radius: 10px;
+    border: 0.15em solid rgb(100, 61, 136);
+    transition: all 0.3s;
+    box-shadow: 0 0 1em 0.25em rgba(191, 123, 255, 0.5),
+                0 0 4em 1em rgba(191, 123, 255, 0.2),
+                inset 0 0 0.5em 0.15em rgb(217, 176, 255);
+    text-shadow: 0 0 0.5em rgb(217, 176, 255);
+}
+
+.sidebar a:hover {
+    transform: scale(1.1);
+    color: rgb(100, 61, 136);
+    background-color: rgb(217, 176, 255);
+    box-shadow: 0 0 1em 0.25em rgb(217, 176, 255),
+                0 0 4em 1.5em rgba(191, 123, 255, 0.7),
+                inset 0 0 0.5em 0.25em rgb(217, 176, 255);
+}
+
+/* Close button for sidebar */
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 15px;
+    margin-left: 15px;
+    color: #e0e0e0;
+    cursor: pointer;
+    padding: 8px 12px; /* Decreased padding to reduce the box size */
+    transition: all 0.3s;
+}
+
+/* Hover effect for close button */
+.sidebar .closebtn:hover {
+    transform: scale(1.2); /* Slightly increase size on hover */
+    color: red; /* Change color to red */
+    padding: 8px 12px; /* Keep the reduced size on hover */
+    text-shadow: 0 0 1em red, 0 0 2em rgba(255, 0, 0, 0.8), 0 0 3em rgba(255, 0, 0, 1); /* Increased glow intensity */
+}
+
+
+/* Menu Icon */
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menu-icon:hover {
+    transform: scale(1.1);
+    color: rgb(217, 176, 255); /* Change color on hover */
+    text-shadow: 0 0 0.5em rgb(217, 176, 255), 0 0 1em rgba(191, 123, 255, 0.5), 0 0 1.5em rgba(191, 123, 255, 0.3); /* Glow effect */
+}
