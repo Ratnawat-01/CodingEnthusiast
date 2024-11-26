@@ -9,13 +9,46 @@
 <body>
     <div class="container">
         <h1>VS Code / C++ Installation Links for Windows</h1>
+        <br>
         <div class="links-section">
             <a href="https://code.visualstudio.com/docs/?dv=win64user" target="_blank" class="neon-link">Download Visual Studio Code</a>
             <a href="https://github.com/msys2/msys2-installer/releases/download/2024-07-27/msys2-x86_64-20240727.exe" target="_blank" class="neon-link">Download C++ Compiler</a>
+            <br>
         </div>
-        <button onclick="window.location.href='index.html'" class="back-button">
-            Back to Dashboard
-        </button>
-    </div>
+        <button onclick="openVideo()" class="youtube-button">Watch YouTube Tutorial</button> </div>
+        
+       <button onclick="window.location.href='index.html'" class="back-button">Back to Dashboard</button>
+    
+
+    <!-- Popup Dialog for YouTube Video -->
+    <dialog id="youtube-dialog">
+        <iframe id="youtube-video" width="560" height="315" 
+            src="https://www.youtube.com/embed/Ym9YTeSL4PU?enablejsapi=1" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+        <button onclick="closeVideo()" class="close-button">Close</button>
+    </dialog>
+
+    <script>
+        // Open the video popup
+        function openVideo() {
+            const dialog = document.getElementById('youtube-dialog');
+            const iframe = document.getElementById('youtube-video');
+
+            // Start the video
+            iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            dialog.showModal();
+        }
+
+        // Close the video popup and stop the video
+        function closeVideo() {
+            const dialog = document.getElementById('youtube-dialog');
+            const iframe = document.getElementById('youtube-video');
+
+            // Stop the video
+            iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+            dialog.close();
+        }
+    </script>
 </body>
 </html>

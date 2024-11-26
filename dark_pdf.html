@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h1>Dark Mode for PDFs on Microsoft Edge</h1>
+        <br><br>
         <div class="code-container">
             <pre id="code">
 var cover = document.createElement("div"); 
@@ -32,7 +33,26 @@ document.documentElement.style.backgroundColor = "white";
             </pre>
             <button onclick="copyCode()" class="copy-btn">Copy Code</button>
         </div>
+        <br><br><br><br><br>
+        <!-- Center the Watch YouTube Tutorial button -->
+        <button onclick="openVideo()" class="youtube-button">Watch YouTube Tutorial</button> 
+
+        <div class="button-container">
+            <button onclick="window.location.href='index.html'" class="back-button">
+                Back to Dashboard
+            </button>
+        </div>
     </div>
+
+    <!-- Popup Dialog for YouTube Video -->
+    <dialog id="youtube-dialog">
+        <iframe id="youtube-video" width="560" height="315" 
+            src="https://www.youtube.com/embed/GuXCoOS2b5c?si=wVkG7_jiy913QTKg" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+        <button onclick="closeVideo()" class="close-button">Close</button>
+    </dialog>
+
     <script>
         function copyCode() {
             const code = document.getElementById("code").innerText;
@@ -41,6 +61,29 @@ document.documentElement.style.backgroundColor = "white";
             }).catch(() => {
                 alert("Failed to copy code.");
             });
+        }
+
+        // Open the video popup
+        function openVideo() {
+            const dialog = document.getElementById('youtube-dialog');
+            const iframe = document.getElementById('youtube-video');
+
+            // Start the video
+            iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            dialog.showModal();
+        }
+
+        // Close the video popup and stop the video
+        function closeVideo() {
+            const dialog = document.getElementById('youtube-dialog');
+            const iframe = document.getElementById('youtube-video');
+
+            // Stop the video by changing the src URL (this stops the video)
+            const videoSrc = iframe.src;
+            iframe.src = ''; // Temporarily clear the source
+            iframe.src = videoSrc; // Restore the source to stop the video
+
+            dialog.close(); // Close the dialog
         }
     </script>
 </body>
