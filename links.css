@@ -55,30 +55,24 @@ h1 {
     --btn-color: rgb(100, 61, 136);
     --glow-color: rgb(217, 176, 255);
     --glow-spread-color: rgba(191, 123, 255, 0.781);
-    border: 0.25em solid var(--btn-color);
-    padding: 1em 3em;
+    border: none; /* Removed previous border */
+    padding: 10px 20px; /* Adjusted padding */
     color: var(--glow-color);
     font-size: 15px;
     font-weight: bold;
     background-color: var(--btn-color);
-    border-radius: 1em;
+    border-radius: 5px; /* Adjusted border-radius */
     outline: none;
-    margin-bottom: 40px; /* Increased space below this button */
-    box-shadow: 0 0 1em 0.25em var(--glow-color),
-                0 0 4em 1em var(--glow-spread-color),
-                inset 0 0 0.75em 0.25em var(--glow-color);
-    text-shadow: 0 0 0.5em var(--glow-color);
+    box-shadow: 0 0 0.5em rgb(217, 176, 255); /* Box shadow */
     cursor: pointer;
-    transition: all 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+    margin-top: 20px; /* Add space above the button */
 }
 
 .youtube-button:hover {
-    color: var(--btn-color);
-    background-color: var(--glow-color);
-    box-shadow: 0 0 1em 0.25em var(--glow-color),
-                0 0 4em 2em var(--glow-spread-color),
-                inset 0 0 0.75em 0.25em var(--glow-color);
     transform: scale(1.1);
+    background-color: rgb(217, 176, 255);
+    color: rgb(100, 61, 136);
 }
 
 /* Back button styling */
@@ -86,30 +80,39 @@ h1 {
     --glow-color: rgb(217, 176, 255);
     --glow-spread-color: rgba(191, 123, 255, 0.781);
     --btn-color: rgb(100, 61, 136);
-    border: 0.25em solid var(--btn-color);
-    padding: 1em 3em;
+    border: none; /* Removed previous border */
+    padding: 10px 20px; /* Adjusted padding */
     color: var(--glow-color);
     font-size: 15px;
     font-weight: bold;
     background-color: var(--btn-color);
-    border-radius: 1em;
+    border-radius: 5px; /* Adjusted border-radius */
     outline: none;
-    box-shadow: 0 0 1em 0.25em var(--glow-color),
-                0 0 4em 1em var(--glow-spread-color),
-                inset 0 0 0.75em 0.25em var(--glow-color);
-    text-shadow: 0 0 0.5em var(--glow-color);
-    position: relative;
-    transition: all 0.3s;
+    box-shadow: 0 0 0.5em rgb(217, 176, 255); /* Box shadow */
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    margin-top: 10px; /* Added space between the two buttons */
 }
 
 .back-button:hover {
-    color: var(--btn-color);
-    background-color: var(--glow-color);
-    box-shadow: 0 0 1em 0.25em var(--glow-color),
-                0 0 4em 2em var(--glow-spread-color),
-                inset 0 0 0.75em 0.25em var(--glow-color);
     transform: scale(1.1);
+    background-color: rgb(217, 176, 255);
+    color: rgb(100, 61, 136);
 }
+
+/* Container for buttons and other sections */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px; /* Added margin to give space from other sections */
+}
+
+.download-section {
+    text-align: center;
+    /* Styles for the Download C++ Compiler button or section */
+}
+
 
 /* Dialog and close button styling */
 dialog {

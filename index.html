@@ -3,52 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Coding Enthusiast</title>
+    <title>Coding Enthusiast</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Logo Image -->
-        
-        <h1>Welcome to Coding Enthusiast</h1>
-        <button onclick="window.location.href='links.html'">VS Code/C++ installation links</button>
-        <button onclick="window.location.href='dark_pdf.html'">View PDF in Dark Mode on Edge</button>
-    </div>
-
-    <!-- Menu Icon -->
     <div class="menu-icon" onclick="openNav()">&#9776;</div>
-
-    <!-- Sidebar Menu -->
     <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="https://www.youtube.com/@Coding_Enhusiast" target="_blank">YouTube Channel</a>
         <a href="about.html">About</a>
     </div>
 
+    <header>
+        <h1 class="site-title">  <p> &nbsp;&nbsp; Coding Enthusiast</p></h1>
+    </header>
+
+    <div class="container">
+        <div class="tables-container">
+            <!-- YouTube Video Links Table -->
+            <table class="youtube-links">
+                <caption>YouTube Videos</caption>
+                <tr>
+                    <th>Title</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>VS Code/C++ Installation</td>
+                    <td><button onclick="window.location.href='links.html'">View</button></td>
+                </tr>
+                <tr>
+                    <td>View PDF in Dark Mode</td>
+                    <td><button onclick="window.location.href='dark_pdf.html'">View</button></td>
+                </tr>
+            </table>
+
+            <!-- Projects Table -->
+            <table class="projects">
+                <caption>Projects</caption>
+                <tr>
+                    <th>Project</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Dark Mode Extension</td>
+                    <td><button onclick="window.location.href='darkpdf.html'">Details</button></td>
+                </tr>
+                <tr>
+                    <td>No Scroll Extension</td>
+                    <td><button onclick="window.location.href='noscroll.html'">Details</button></td>
+                </tr>
+                <tr>
+                    <td>Module Manager</td>
+                    <td><button onclick="window.location.href='modulemanager.html'">Details</button></td>
+                </tr>
+                <tr>
+                    <td>To Do List (AI)</td>
+                    <td><button onclick="window.location.href='todolist.html'">Details</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
     <script>
-        /* Open when someone clicks on the 3-line menu */
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";
-            // Add event listener for clicks outside the sidebar
-            document.addEventListener('click', closeSidebarOnClickOutside);
         }
 
-        /* Close when someone clicks on the "x" */
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
-            // Remove event listener when the sidebar is closed
-            document.removeEventListener('click', closeSidebarOnClickOutside);
-        }
-
-        /* Function to close sidebar when clicking outside */
-        function closeSidebarOnClickOutside(event) {
-            // If the click was outside the sidebar and menu icon
-            const sidebar = document.getElementById("mySidebar");
-            const menuIcon = document.querySelector(".menu-icon");
-
-            if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
-                closeNav();
-            }
         }
     </script>
 </body>
